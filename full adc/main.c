@@ -1,30 +1,38 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void func();
 
    float P;
  int main()
 {
+    func();
 
       int select;
 
     do
     {
-         func();
     printf("press 1 to continue :\n");
     scanf("%d", & select);
+    func();
 
     } while(select==1);
 }
 
 void func()
 {
+float vin,vout;
+printf("enter the input voltage:\n");
+scanf("%f",&vin);
+vout=vin*0.41666;//max output voltage from sensor is 12; max input to the mcu is 5....>>>> 5/12=0.4166
+printf("the output voltage is:%f\n", vout);
 int b,vref=1,i;
     float vol,ref=5,res,tmp;
 printf("enter the no of bits:");
 scanf("%d",&b);
-printf("Enter the input voltage:");
-scanf("%f", &vol);
+vol=vout;
+//printf("Enter the input voltage:");
+//scanf("%f", &vol);
 for(i=0;i<=b;i++)
 {
     vref=(2*vref);
@@ -41,7 +49,4 @@ res= vol*tmp;
     P = (res / (double)vref)*100 ;
     printf("the battery status: %f \n",P);
 }
-
-
-
 
