@@ -10,11 +10,11 @@ void func1();
 {
 
     int select;
- //func1();
+ func1();
      do
     {
-         func1();
-    printf("Do u want to change the bits, press 2 to continue :\n");
+        // func1();
+    printf("Do u want to change the bits, press 2 to continue or press any key to exit:\n");
     scanf("%d", & select);
 
     } while(select==2);
@@ -34,9 +34,9 @@ void func1()
     do
         { printf("Enter the value within the level:\n");
     scanf("%d", &n);
-    P = (n / (double)N)*100 ;
+    P = (n / (double)(N-1))*100 ;
     printf("the battery status: %f \n",P);
-    printf("Do you want to change the level, Press 1:\n");
+    printf("Do you want to change the level, Press 1 to continue or press any key to exit:\n");
 scanf("%d", & sel);
     }
     while(sel==1);
